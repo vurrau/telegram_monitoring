@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import create_engine, Column, Integer, String, DateTime
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, BIGINT
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from cfg import DATABASE_URL
@@ -13,9 +13,9 @@ Base = declarative_base()
 class Message(Base):
     __tablename__ = "messages"
     id = Column(Integer, primary_key=True, index=True)
-    message_id = Column(Integer, index=True)
+    message_id = Column(BIGINT, index=True)
     text = Column(String)
-    sender_id = Column(Integer)
+    sender_id = Column(BIGINT)
     first_name = Column(String)
     last_name = Column(String)
     username = Column(String)
