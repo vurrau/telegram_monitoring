@@ -1,7 +1,9 @@
+from datetime import datetime
+
 from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from db import DATABASE_URL
+from cfg import DATABASE_URL
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -18,4 +20,4 @@ class Message(Base):
     last_name = Column(String)
     username = Column(String)
     phone_number = Column(String)
-    date = Column(DateTime)
+    date = Column(DateTime, default=datetime)
