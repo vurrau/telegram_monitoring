@@ -9,24 +9,26 @@ api_hash = API_HASH
 client = TelegramClient('bot', api_id, api_hash)
 
 
-@client.on(events.NewMessage)
+@client.on(events.NewMessage(incoming=True))
 async def handler(event):
-    print(f"Received a new message from {event.sender_id}: {event.text}")
-    sender = await event.get_sender()
-    message = Message(
-        message_id=event.id,
-        text=event.text,
-        sender_id=sender.id,
-        first_name=sender.first_name,
-        last_name=sender.last_name,
-        username=sender.username,
-        phone_number=sender.phone,
-        date=datetime.now()
-    )
-    db = SessionLocal()
-    db.add(message)
-    db.commit()
-    db.close()
+    if event.is_private:
+        print(f"Received a new message from {event.sender_id}: {event.text}")
+        sender = await event.get_sender()
+
+        message = Message(
+            message_id=event.id,
+            text=event.text,
+            sender_id=sender.id,
+            first_name=sender.first_name,
+            last_name=sender.last_name,
+            username=sender.username,
+            phone_number=sender.phone,
+            date=datetime.now()
+        )
+        db = SessionLocal()
+        db.add(message)
+        db.commit()
+        db.close()
 
 
 def start_client():
