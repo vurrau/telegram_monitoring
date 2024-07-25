@@ -11,8 +11,11 @@ client = TelegramClient('bot', api_id, api_hash)
 
 @client.on(events.NewMessage(incoming=True))
 async def handler(event):
-    if event.is_private:
-        print(f"Received a new message from {event.sender_id}: {event.text}")
+    """
+    Handler function for incoming messages.
+    Saves private messages to the database.
+    """
+    if event.is_private:    # Separate channel spam from private messages
         sender = await event.get_sender()
 
         message = Message(
