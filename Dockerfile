@@ -17,7 +17,7 @@ RUN chmod 0644 /etc/cron.d/telethon-cron
 # Create a log file for cron
 RUN touch /var/log/cron.log
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
