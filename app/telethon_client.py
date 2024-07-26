@@ -35,5 +35,5 @@ async def handler(event):
 
 
 def start_client():
-    client.start()
+    client.start(bot_token=TELEGRAM_TOKEN)
     client.run_until_disconnected()
