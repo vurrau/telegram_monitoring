@@ -1,3 +1,4 @@
+
 # **Telegram monitoring bot**
 
 ### *For the test task at Ohara Media.*
@@ -49,8 +50,28 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**3. Run FastAPI application.**
+**3. Run application.**
 
 ```
 python main.py
 ```
+## ⚙️ Settings
+
+* You can set-up your own settings in dot env files.
+* The project uses PostgreSQL as default database.
+* You can read the docs for the Telethon here: https://docs.telethon.dev/
+
+```
+
+TELEGRAM_TOKEN (str): Telegram bot token.
+API_ID (int): API ID for the Telegram API.
+API_HASH (str): API hash for the Telegram API.
+DB_HOST (str): Host of the database.
+DB_PORT (int): Port of the database.
+DB_NAME (str): Name of the database.
+DB_PASS (int): Password for the database.
+DB_USER (str): Username for the database.
+
+
+
+
