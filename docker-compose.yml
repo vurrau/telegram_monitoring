@@ -23,7 +23,6 @@ services:
       - .env-non-dev
     depends_on:
       - postgres
-    entrypoint: ["/entrypoint.sh"]
     command: [ "sh", "-c", "python app/main.py" ]
 
 volumes:
