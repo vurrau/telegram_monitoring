@@ -62,7 +62,6 @@ python main.py
 * You can read the docs for the Telethon here: https://docs.telethon.dev/
 
 ```
-
 TELEGRAM_TOKEN (str): Telegram bot token.
 API_ID (int): API ID for the Telegram API.
 API_HASH (str): API hash for the Telegram API.
@@ -71,7 +70,3 @@ DB_PORT (int): Port of the database.
 DB_NAME (str): Name of the database.
 DB_PASS (int): Password for the database.
 DB_USER (str): Username for the database.
-
-
-
-
