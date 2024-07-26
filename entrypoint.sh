@@ -1,5 +1,5 @@
 #!/bin/sh
-while ! pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER"; do
+while ! pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER";do
   echo "Waiting PostgreSQL..."
   sleep 2
 done
