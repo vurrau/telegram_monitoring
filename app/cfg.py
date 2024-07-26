@@ -11,6 +11,6 @@ DB_PASS = os.environ.get("DB_PASS")
 
 API_ID = os.environ.get('API_ID')
 API_HASH = os.environ.get('API_HASH')
-API_TELEGRAM = os.environ.get('API_TELEGRAM')
+TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
 
 DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
