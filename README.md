@@ -30,7 +30,7 @@ cd telegram_monitoring
 ```
 docker-compose up --build
 ```
-
+* if entrypoint.sh: Syntax error try in entrypoint.sh swap #!/bin/sh to #!/bin/bash 
 
 ## 🖥 Setup manualy
 
